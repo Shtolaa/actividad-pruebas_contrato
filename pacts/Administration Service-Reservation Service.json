@@ -1,0 +1,68 @@
+{
+  "consumer": {
+    "name": "Administration Service"
+  },
+  "interactions": [
+    {
+      "description": "a request for active reservation R-1001",
+      "key": "f004f346",
+      "pending": false,
+      "providerStates": [
+        {
+          "name": "reservation R-1001 exists and is active"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/reservations/R-1001"
+      },
+      "response": {
+        "body": {
+          "content": {
+            "active": true
+          },
+          "contentType": "application/json",
+          "encoded": false
+        },
+        "headers": {
+          "Content-Type": [
+            "application/json"
+          ]
+        },
+        "status": 200
+      },
+      "transport": "http",
+      "type": "Synchronous/HTTP"
+    },
+    {
+      "description": "a request for missing reservation R-9999",
+      "key": "7ba480c",
+      "pending": false,
+      "providerStates": [
+        {
+          "name": "reservation R-9999 does not exist"
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "path": "/reservations/R-9999"
+      },
+      "response": {
+        "status": 404
+      },
+      "transport": "http",
+      "type": "Synchronous/HTTP"
+    }
+  ],
+  "metadata": {
+    "pact-jvm": {
+      "version": "4.6.17"
+    },
+    "pactSpecification": {
+      "version": "4.0"
+    }
+  },
+  "provider": {
+    "name": "Reservation Service"
+  }
+}
