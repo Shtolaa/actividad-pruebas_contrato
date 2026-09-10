@@ -12,7 +12,7 @@
     "express": "^5.0.0"
   },
   "devDependencies": {
-    "@pact-foundation/pact": "^16.0.0",
+    "@pact-foundation/pact": "16.4.0",
     "jest": "^30.0.0"
   }
 }
