@@ -19,7 +19,8 @@
       "response": {
         "body": {
           "content": {
-            "active": true
+            "active": true,
+            "id": "R-1001"
           },
           "contentType": "application/json",
           "encoded": false

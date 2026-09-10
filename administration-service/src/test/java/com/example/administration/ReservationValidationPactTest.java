@@ -35,7 +35,7 @@ class ReservationValidationPactTest {
                 .willRespondWith()
                 .status(200)
                 .headers(Map.of("Content-Type", "application/json"))
-                .body("{\"active\":true}")
+                .body("{\"id\":\"R-1001\",\"active\":true}")
                 .toPact(V4Pact.class);
     }
 
