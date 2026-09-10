@@ -148,7 +148,14 @@ El resultado esperado es `6 interactions verified` y cero fallos.
 Para utilizar otra URL del proveedor:
 
 ```bash
-PROVIDER_URL=http://localhost:8000 python -m pytest provider-verification/test_provider_pacts.py -s
+PROVIDER_URL=http://127.0.0.1:8000 python -m pytest provider-verification/test_provider_pacts.py -s
+```
+
+En Windows PowerShell:
+
+```powershell
+$env:PROVIDER_URL = "http://127.0.0.1:8000"
+.\.venv\Scripts\python.exe -m pytest provider-verification\test_provider_pacts.py -s
 ```
 
 ## Provider states

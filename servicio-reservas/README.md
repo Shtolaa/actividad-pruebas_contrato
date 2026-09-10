@@ -127,6 +127,13 @@ pip install -r requisitos.txt
 PACT_TEST_MODE=true uvicorn aplicacion.principal:app --host 0.0.0.0 --port 8000
 ```
 
+En Windows PowerShell:
+
+```powershell
+$env:PACT_TEST_MODE = "true"
+.\.venv\Scripts\python.exe -m uvicorn aplicacion.principal:app --host 0.0.0.0 --port 8000
+```
+
 ## Ejecutar las pruebas
 
 ```bash
@@ -151,7 +158,6 @@ Provider states:              POST /_pact/provider-state
 Variable requerida:           PACT_TEST_MODE=true
 ```
 
-La URL que usan el Portal de Usuario y el Servicio de Administración dentro de
-Docker (`RESERVATION_SERVICE_URL`) depende del nombre que reciba el servicio en
-`docker-compose.yml`; si se llama `servicio-reservas`, la URL es
-`http://servicio-reservas:8000`.
+Dentro del `docker-compose.yml` de este repositorio, el servicio se llama
+`reservation-service`; por tanto, `RESERVATION_SERVICE_URL` debe ser
+`http://reservation-service:8000`.

@@ -46,6 +46,13 @@ npm install
 RESERVATION_SERVICE_URL=http://localhost:8000 npm start
 ```
 
+En Windows PowerShell:
+
+```powershell
+$env:RESERVATION_SERVICE_URL = "http://localhost:8000"
+npm start
+```
+
 ```bash
 curl http://localhost:3000/portal/users/U100/reservations
 ```
@@ -85,6 +92,6 @@ Comando de pruebas Pact:      cd user-portal && npm install && npm test
 Contrato generado:            pacts/User Portal-Reservation Service.json
 ```
 
-Dentro de Docker, `RESERVATION_SERVICE_URL` debe apuntar al nombre que reciba el
-Servicio de Reservas en `docker-compose.yml`; si se llama `servicio-reservas`, la
-URL es `http://servicio-reservas:8000`.
+Dentro del `docker-compose.yml` de este repositorio, el Servicio de Reservas se
+llama `reservation-service`, por lo que la URL es
+`http://reservation-service:8000`.
